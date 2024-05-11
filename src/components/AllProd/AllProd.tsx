@@ -14,14 +14,28 @@ interface Product { //had to create an interface to specify the type of data tha
 }
 
 function AllProd() {
-  
+    
+    const [page, setPage] = useState(1)
     const [data,setData]= useState<Product[]>([])
     useEffect(()=>{
-        fetch('https://fakestoreapi.com/products/')
+      const lim= 8 * page                             // for infinite scrolling
+        fetch(`https://fakestoreapi.com/products?limit=${lim}`)
             .then(res=>res.json())
             .then((res: Product[]) => setData(res))
+    },[page])
+    const handleScroll = () => {
+     
+      
+      if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight)
+      {
+        setPage((prev) => prev+1);
+        
+      }
+    }
+    useEffect(()=>{
+      window.addEventListener("scroll", handleScroll)
+      return () => window.removeEventListener("scroll", handleScroll)
     },[])
-
     return (
       <>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-5 px-20">
@@ -38,3 +52,5 @@ function AllProd() {
   }
   
   export default AllProd;
+  
+  

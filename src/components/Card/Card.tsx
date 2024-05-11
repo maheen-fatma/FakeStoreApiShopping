@@ -5,7 +5,7 @@ interface CardProps{
     image: string;
 }
 function Card({title,price,rate, image} : CardProps) {
-  
+
 
     return (
       <>
