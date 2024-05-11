@@ -18,7 +18,7 @@ function AllProd() {
     const [page, setPage] = useState(1)
     const [data,setData]= useState<Product[]>([])
     useEffect(()=>{
-      const lim= 8 * page                             // for infinite scrolling
+      const lim= 6 * page                             // for infinite scrolling
         fetch(`https://fakestoreapi.com/products?limit=${lim}`)
             .then(res=>res.json())
             .then((res: Product[]) => setData(res))
@@ -38,7 +38,7 @@ function AllProd() {
     },[])
     return (
       <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-5 px-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-4 pt-5 px-20">
         {
             data.map((item)=>
               <Card title={item.title} price={item.price} rate={item.rating.rate} image={item.image} />
