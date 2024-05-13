@@ -5,7 +5,7 @@ import App from './App'
 import './index.css'
 import AllProd from './components/AllProd/AllProd'
 import Category from './components/Category/Category'
-
+import Cart from './components/Cart/Cart'
 const router= createBrowserRouter([
   {
     path:'/',
@@ -18,6 +18,10 @@ const router= createBrowserRouter([
       {
         path:":cat",
         element: <Category />
+      },
+      {
+        path:"cart",
+        element: <Cart />
       }
     ]
   }

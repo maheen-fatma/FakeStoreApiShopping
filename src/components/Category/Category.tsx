@@ -30,7 +30,7 @@ function Category() {
         
         {
             data.map((item)=>
-              <Card key={item.id} title={item.title} price={item.price} rate={item.rating.rate} image={item.image} />
+              <Card key={item.id} id={item.id} title={item.title} price={item.price} rate={item.rating.rate} image={item.image} />
             )
         }
       

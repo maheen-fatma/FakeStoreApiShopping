@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 
 interface CardProps{
+    id: number;
     title: string;
     price: number;
     rate: number;
@@ -7,12 +9,14 @@ interface CardProps{
 }
 
 
-function Card({title,price,rate, image} : CardProps) {
+function Card({id, title,price,rate, image} : CardProps) {
 
-
+   
 
     return (
       <>
+     
+      
       
        <div
        
@@ -23,6 +27,7 @@ function Card({title,price,rate, image} : CardProps) {
             <div className="font-bold text-xl mt-2 mb-2">{title}</div> <hr />
             <div className=" my-4 font-medium text-lg group-hover:text-2xl transition duration-1000 ease-in-out transform group-hover:-translate-y-1 group">${price}</div> <hr />
             <div className="my-4">Rating: <span className=" text-yellow-500">{rate}</span> / 5</div>
+            
          </div>
          
 </div>
@@ -33,3 +38,4 @@ function Card({title,price,rate, image} : CardProps) {
   }
   
   export default Card;
+  //<Link to="/cart" >Cart</Link>

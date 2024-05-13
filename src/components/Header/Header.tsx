@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 
 function Header() {
     
@@ -47,7 +47,7 @@ function Header() {
                     </ul>
                 </div>
                 <div className="flex flex-row justify-between items-center">
-                   hi
+                   <Link to="/cart">Add To Cart</Link>
                 </div>
             </div>   
         </header>

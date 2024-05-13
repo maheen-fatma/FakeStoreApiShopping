@@ -43,7 +43,13 @@ function AllProd() {
       document.documentElement.scrollTop=0
       
     }
-
+    const [cartItem, setCartItem]= useState<Product[]>([])
+    const addToCart = (cart:Product) => {
+      setCartItem(prev=> [...prev, cart])
+      //cartItems contain the objects added to cart
+      
+    }
+    
     return (
       <>
       <div className="px-20 py-5">
@@ -68,11 +74,14 @@ function AllProd() {
               
             })
             .map((item)=>
+              <div key={item.id}>
+
               
-              <div key={item.id} onClick={()=>handleClick(item.id)}>
-                  <Card  key={item.id} title={item.title} price={item.price} rate={item.rating.rate} image={item.image} />
+              <div  onClick={()=>handleClick(item.id)}>
+                  <Card  key={item.id} id={item.id} title={item.title} price={item.price} rate={item.rating.rate} image={item.image} />
               </div>
-              
+              <button onClick={()=>addToCart(item)} className="border border-solid border-gray-500 text-xl rounded-md p-2 hover:bg-sky-800 bg-sky-950 text-white">Cart</button>
+              </div>
             )
         }
         
