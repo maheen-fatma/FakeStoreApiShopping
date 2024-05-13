@@ -27,12 +27,13 @@ function Category() {
     return (
       <>
        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-5 px-20">
+        
         {
             data.map((item)=>
-              <Card title={item.title} price={item.price} rate={item.rating.rate} image={item.image} />
+              <Card key={item.id} title={item.title} price={item.price} rate={item.rating.rate} image={item.image} />
             )
         }
-        
+      
         
       </div>
       

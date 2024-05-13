@@ -5,6 +5,7 @@ import App from './App'
 import './index.css'
 import AllProd from './components/AllProd/AllProd'
 import Category from './components/Category/Category'
+
 const router= createBrowserRouter([
   {
     path:'/',
@@ -17,19 +18,7 @@ const router= createBrowserRouter([
       {
         path:":cat",
         element: <Category />
-      },
-      {
-        path:":cat",
-        element: <Category />
-      },
-      {
-        path:":cat",
-        element: <Category />
-      },
-      {
-        path:":cat",
-        element: <Category />
-      },
+      }
     ]
   }
 ])

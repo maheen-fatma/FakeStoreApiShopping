@@ -1,20 +1,20 @@
 import { NavLink } from "react-router-dom";
-function Header() {
-  
 
+function Header() {
+    
+    
     return (
       <>
       <header className="drop-shadow-md shadow-slate-300  sticky  z-50 top-0 bg-white">
             <div className="flex flex-row justify-between items-center h-24 sm:pr-24 px-24  ">
-            <div className="flex flex-col justify-between items-center">
-             
+            
             <img
                             src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
                             className="h-12 "
                             alt="Logo"
                         />
-            <input type="text" name="" id="" className=" px-2 text-lg border border-gray-300 rounded hover:border-gray-500" placeholder="Search name/description" />
-            </div> 
+            
+             
             
             <div className="flex flex-row text-xl justify-between font-bold items-center">
               Filter Categories:
